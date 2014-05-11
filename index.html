@@ -312,11 +312,11 @@ a {
 <div class="map-container">
   <div class="default-load">
     Drag GeoJSON/TopoJSON files here, use the uploader above,<br>
-    or, if you’re feeling lazy, <a href="#" class="sample states">use a sample file</a>
+    or, if you’re feeling lazy, <a href="#" class="sample states">use our Indian.administrative sample file</a> or <a href="#" class="sample states">unitedstate sample file</a>.
   </div>
 </div>
 <div class="map-controls">
-  <p>This is a simple GUI for <a href="https://github.com/mbostock/topojson">TopoJSON</a>. Fork me on <a href="https://github.com/shancarter/distillery">Github</a></p>
+  <p>This is a simple GUI for <a href="https://github.com/mbostock/topojson">TopoJSON</a>. Fork me on <a href="https://github.com/hugolpz/distillery">Github</a></p>
   <h4>Projection</h4>
   <select class="projection"></select>
   <h4>Details</h4>
@@ -726,10 +726,16 @@ function handleFiles(files) {
 //
 // Sample data
 //
+d3.select(".sample.india").on("click", function(){
+  d3.event.preventDefault();
+  d3.json("india.administrative.topo.json", function(error, json) {
+    addJSON(json, "states");
+  })
+});
 
 d3.select(".sample.states").on("click", function(){
   d3.event.preventDefault();
-  d3.json("samples/geojson/states.json", function(error, json) {
+  d3.json("unitedstates.geo.json", function(error, json) {
     addJSON(json, "states");
   })
 });
