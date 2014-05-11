@@ -1,4 +1,31 @@
-lib
-samples
-working
-node_modules
+# Folder
+**/test/
+
+# Files (globes)
+*.zip
+*.rar
+*.tiff
+*.tif
+*.shp
+*.shx
+*.dbf
+*.prj
+#*.geo.json
+*.sql
+*.pdf
+*.sbn
+*.sbx
+*.tsv
+*.csv
+#*.png
+#*.jpg
+*.svg
+* *_.html
+
+
+# Root
+*.README.html
+*.VERSION.txt
+
+
+
