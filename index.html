@@ -315,7 +315,7 @@ a {
 <div class="map-container">
   <div class="default-load">
     Drag GeoJSON/TopoJSON files here, or use the uploader above.<br />
-    If you’re feeling lazy, use our <a href="#" class="sample.administrative">administrative</a> and <a href="#" class="sample.topography">topographic</a> sample files of India,<br /> or this <a href="#" class="sample states">Unitedstate file</a>.
+    If you’re feeling lazy, use our <a href="#" class="sample-administrative india">administrative</a> and <a href="#" class="sample-topography india">topographic</a> sample files of India,<br /> or this <a href="#" class="sample-states states">Unitedstate file</a>.
   </div>
 </div>
 <div class="map-controls">
@@ -728,21 +728,21 @@ function handleFiles(files) {
 
 //
 // Sample data
-d3.select(".sample.administrative").on("click", function(){
+d3.select(".sample-administrative").on("click", function(){
   d3.event.preventDefault();
   d3.json("data/administrative.topo.json", function(error, json) {
     addJSON(json, "states");
   })
 });
 
-d3.select(".sample.topography").on("click", function(){
+d3.select(".sample-topography").on("click", function(){
   d3.event.preventDefault();
-  d3.json("levels.topo.json", function(error, json) {
+  d3.json("data/topography.topo.json", function(error, json) {
     addJSON(json, "states");
   })
 });
 
-d3.select(".sample.states").on("click", function(){
+d3.select(".sample-states").on("click", function(){
   d3.event.preventDefault();
   d3.json("data/unitedstates.geo.json", function(error, json) {
     addJSON(json, "states");
